@@ -6,17 +6,7 @@
       height="200px"
       width="300px"
     />
-    <HelloWorld msg="Welcome to my website hehehe" />
-    <ParticleBtn
-      :visible.sync="btnOps.visible"
-      :animating.sync="btnOps.animating"
-      :options="btnOps"
-      cls="btn-cls"
-    >
-      hello eveybody!
-    </ParticleBtn>
-    <h2>animating:{{ btnOps.animating }}</h2>
-    <h2>visible:{{ btnOps.visible }}</h2>
+    <ParticleBtn :options="btnOps" cls="btn-cls"> hello eveybody! </ParticleBtn>
     <button @click="btnOps.visible = !btnOps.visible">toggle</button>
   </div>
 </template>
@@ -48,8 +38,6 @@ export default {
         onBegin: () => {
           console.log("begin");
         },
-        visible: true,
-        animating: false,
       },
     };
   },
