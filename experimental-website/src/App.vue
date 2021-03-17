@@ -1,19 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/MathVueJsWebsite.jpeg" 
-    height="200px" width="300px"
+    <img
+      alt="Vue logo"
+      src="./assets/MathVueJsWebsite.jpeg"
+      height="200px"
+      width="300px"
     />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HelloWorld msg="Welcome to my website hehehe" />
+    <ParticleBtn
+      :visible.sync="btnOps.visible"
+      :animating.sync="btnOps.animating"
+      :options="btnOps"
+      cls="btn-cls"
+    >
+      hello eveybody!
+    </ParticleBtn>
+    <h2>animating:{{ btnOps.animating }}</h2>
+    <h2>visible:{{ btnOps.visible }}</h2>
+    <button @click="btnOps.visible = !btnOps.visible">toggle</button>
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import ParticleBtn from "vue-particle-effect-buttons";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
+    ParticleBtn,
+  },
+  data() {
+    return {
+      btnOps: {
+        type: "circle",
+        easing: "easeOutQuart",
+        size: 6,
+        particlesAmountCoefficient: 4,
+        oscillationCoefficient: 2,
+        color: function () {
+          return Math.random() < 0.5 ? "#000000" : "#ffffff";
+        },
+        onComplete: () => {
+          console.log("complete");
+        },
+        onBegin: () => {
+          console.log("begin");
+        },
+        visible: true,
+        animating: false,
+      },
+    };
   },
 };
 </script>
