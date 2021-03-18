@@ -1,15 +1,22 @@
 <template>
   <div id="app">
+    <h1>All About Math!</h1><div><br><action-text-attachment presentation="gallery"></action-text-attachment></div>
     <img
       alt="Vue logo"
       src="./assets/MathVueJsWebsite.jpeg"
       height="200px"
       width="300px"
     />
+    <h2>Absolute Values</h2><div>Today we will be learning about absolute values, and how they are used in context. Press the "Next" button below to read more.<br><action-text-attachment presentation="gallery"></action-text-attachment></div>
+    <h2></h2><div><br><action-text-attachment presentation="gallery"></action-text-attachment></div>
 
-    <ParticleBtn :visible.sync="btnOps.visible" :options="btnOps" cls="btn-cls"> Cklick me! </ParticleBtn>
+    <ParticleBtn :visible.sync="btnOps.visible" :options="btnOps" cls="btn-cls"> Next </ParticleBtn>
 
-    <h1 v-if="!isHidden">Hello! Today, we will be learning about math...</h1>
+    <h3 v-if="!isHidden">The first thing we will be covering today is the biggest question there is; what is "absolute value"? Well, to answer that question, we need to know what makes up an absolute value.</h3>
+    <h2 v-if="!isHidden">Absolute Value Bars</h2>
+    <h3 v-if="!isHidden">Absolute value bars are the bars that you put around an intger to get it's absolute value.</h3>
+
+
   </div>
 </template>
 
@@ -58,8 +65,15 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 2rem;
   text-align: center;
-  color: #2c3e50;
+  color: #281883;
   margin-top: 60px;
+}
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    background-color:rgb(21, 172, 54);
 }
 </style>
