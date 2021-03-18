@@ -6,14 +6,15 @@
       height="200px"
       width="300px"
     />
+
     <ParticleBtn :visible.sync="btnOps.visible" :options="btnOps" cls="btn-cls"> Cklick me! </ParticleBtn>
     <button @click="btnOps.visible = !btnOps.visible">toggle</button>
     <ParticleBtn v-on:click="isHidden = true">Hide the text below</ParticleBtn>
-    <ParticleBtn v-on:click="isHidden = !isHidden">
+    <ParticleBtn v-on:click="isHidden=!isHidden">
       Toggle hide and show
     </ParticleBtn>
 
-    <h1 v-if="!isHidden">Hide me on click event!</h1>
+    <h1 v-if="!isHidden">Hello! Today, we will be learning about math...</h1>
   </div>
 </template>
 
@@ -29,12 +30,10 @@ export default {
   },
   data() {
     return {
+      isHidden: true,
       btnOps: {
         type: "circle",
         easing: "easeOutQuart",
-        size: 6,
-        particlesAmountCoefficient: 4,
-        oscillationCoefficient: 2,
         visible: true,
         animating: false,
         color: function () {
@@ -42,6 +41,7 @@ export default {
         },
         onComplete: () => {
           console.log("complete");
+          this.isHidden = !this.isHidden
         },
         onBegin: () => {
           console.log("begin");
