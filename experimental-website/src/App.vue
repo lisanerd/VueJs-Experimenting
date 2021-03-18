@@ -6,7 +6,7 @@
       height="200px"
       width="300px"
     />
-    <ParticleBtn :options="btnOps" cls="btn-cls"> Cklick me! </ParticleBtn>
+    <ParticleBtn :visible.sync="btnOps.visible" :options="btnOps" cls="btn-cls"> Cklick me! </ParticleBtn>
     <button @click="btnOps.visible = !btnOps.visible">toggle</button>
     <ParticleBtn v-on:click="isHidden = true">Hide the text below</ParticleBtn>
     <ParticleBtn v-on:click="isHidden = !isHidden">
@@ -35,6 +35,8 @@ export default {
         size: 6,
         particlesAmountCoefficient: 4,
         oscillationCoefficient: 2,
+        visible: true,
+        animating: false,
         color: function () {
           return Math.random() < 0.5 ? "#000000" : "#ffffff";
         },
