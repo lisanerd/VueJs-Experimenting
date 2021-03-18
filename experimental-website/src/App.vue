@@ -8,11 +8,6 @@
     />
 
     <ParticleBtn :visible.sync="btnOps.visible" :options="btnOps" cls="btn-cls"> Cklick me! </ParticleBtn>
-    <button @click="btnOps.visible = !btnOps.visible">toggle</button>
-    <ParticleBtn v-on:click="isHidden = true">Hide the text below</ParticleBtn>
-    <ParticleBtn v-on:click="isHidden=!isHidden">
-      Toggle hide and show
-    </ParticleBtn>
 
     <h1 v-if="!isHidden">Hello! Today, we will be learning about math...</h1>
   </div>
@@ -34,8 +29,6 @@ export default {
       btnOps: {
         type: "circle",
         easing: "easeOutQuart",
-        visible: true,
-        animating: false,
         color: function () {
           return Math.random() < 0.5 ? "#000000" : "#ffffff";
         },
