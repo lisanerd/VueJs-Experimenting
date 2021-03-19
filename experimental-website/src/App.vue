@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <particles-bg type="lines" :bg="true" />
     <h1>All About Math!</h1><div><br><action-text-attachment presentation="gallery"></action-text-attachment></div>
     <img
       alt="Vue logo"
@@ -23,12 +24,15 @@
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import ParticleBtn from "vue-particle-effect-buttons";
+import { ParticlesBg } from "particles-bg-vue";
+
 
 export default {
   name: "App",
   components: {
     HelloWorld,
     ParticleBtn,
+    ParticlesBg,
   },
   data() {
     return {
@@ -67,13 +71,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   font-size: 2rem;
   text-align: center;
-  color: #281883;
+  color: #cac4ee;
   margin-top: 60px;
 }
-html, 
+/* html, 
 body {
     margin: 0;
     padding: 0;
     background-color:rgb(21, 172, 54);
-}
+} */
 </style>
