@@ -71,13 +71,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   font-size: 2rem;
   text-align: center;
-  color: #cac4ee;
+  color: #dcdae7;
   margin-top: 60px;
 }
 /* html, 
 body {
     margin: 0;
     padding: 0;
-    background-color:rgb(21, 172, 54);
+    background-color:rgb(228, 238, 230);
 } */
 </style>
