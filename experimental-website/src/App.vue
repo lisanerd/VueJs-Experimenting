@@ -1,22 +1,52 @@
 <template>
   <div id="app">
-    <particles-bg type="lines" :bg="true" />
-    <h1>All About Math!</h1><div><br><action-text-attachment presentation="gallery"></action-text-attachment></div>
+    <particles-bg type="lines" :bg="true" color="#330033" />
+    <h1>All About Math!</h1>
+    <div>
+      <br /><action-text-attachment
+        presentation="gallery"
+      ></action-text-attachment>
+    </div>
     <img
       alt="Vue logo"
       src="./assets/MathVueJsWebsite.jpeg"
       height="200px"
       width="300px"
     />
-    <h2>Absolute Values</h2><div>Today we will be learning about absolute values, and how they are used in context. Press the "Next" button below to read more.<br><action-text-attachment presentation="gallery"></action-text-attachment></div>
-    <h2></h2><div><br><action-text-attachment presentation="gallery"></action-text-attachment></div>
+    <h2>Absolute Values</h2>
+    <div>
+      Today we will be learning about absolute values, and how they are used in
+      context. Press the "Next" button below to read more.<br /><action-text-attachment
+        presentation="gallery"
+      ></action-text-attachment>
+    </div>
+    <h2></h2>
+    <div>
+      <br /><action-text-attachment
+        presentation="gallery"
+      ></action-text-attachment>
+    </div>
 
-    <ParticleBtn :visible.sync="btnOps.visible" :options="btnOps" cls="btn-cls"> Next </ParticleBtn>
+    <ParticleBtn :visible.sync="btnOps.visible" :options="btnOps" cls="btn-cls">
+      Next
+    </ParticleBtn>
+    <div v-if="!isHidden">
+      <h3>
+        The first thing we will be covering today is the biggest question there
+        is; what is "absolute value"? Well, to answer that question, we need to
+        know what makes up an absolute value.
+      </h3>
+      <h2>Absolute Value Bars</h2>
+      <h3>
+        Absolute value bars are the bars that you put around an intger to get
+        it's absolute value.
+      </h3>
+      <ParticleBtn v-if="!isHidden" :options="btnOps_2" cls="btn-cls">
+        Next
+      </ParticleBtn>
+    </div>
 
-    <h3 v-if="!isHidden">The first thing we will be covering today is the biggest question there is; what is "absolute value"? Well, to answer that question, we need to know what makes up an absolute value.</h3>
-    <h2 v-if="!isHidden">Absolute Value Bars</h2>
-    <h3 v-if="!isHidden">Absolute value bars are the bars that you put around an intger to get it's absolute value.</h3>
-
+    <h3 v-if="!isHidden_2">fggfdddrtfgvfg</h3>
 
   </div>
 </template>
@@ -25,7 +55,6 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import ParticleBtn from "vue-particle-effect-buttons";
 import { ParticlesBg } from "particles-bg-vue";
-
 
 export default {
   name: "App",
@@ -37,18 +66,15 @@ export default {
   data() {
     return {
       isHidden: true,
+      isHidden_2: true,
       btnOps: {
-        type: "circle",
-        easing: "easeOutQuart",
-        color: function () {
-          return Math.random() < 0.5 ? "#000000" : "#ffffff";
-        },
         onComplete: () => {
-          console.log("complete");
-          this.isHidden = !this.isHidden
+          this.isHidden = !this.isHidden;
         },
-        onBegin: () => {
-          console.log("begin");
+      },
+      btnOps_2: {
+        onComplete: () => {
+          this.isHidden_2 = !this.isHidden_2;
         },
       },
     };
